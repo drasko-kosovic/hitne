@@ -24,6 +24,7 @@ export class HitneComponent implements OnInit, OnDestroy {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
+  brojPokretanja: any;
 
   constructor(
     protected hitneService: HitneService,
@@ -102,5 +103,26 @@ export class HitneComponent implements OnInit, OnDestroy {
 
   protected onError(): void {
     this.ngbPaginationPage = this.page;
+  }
+  prazansearch(): void {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+    this.brojPokretanja = '';
+    this.loadPage();
+  }
+
+  searchBrojPokretanja(page?: number): void {
+    const pageToLoad: number = page ? page : this.page;
+    this.hitneService
+      .query({
+        'brojpokretanja.equals': this.brojPokretanja,
+
+        page: pageToLoad - 1,
+        size: this.itemsPerPage,
+        sort: this.sort()
+      })
+      .subscribe(
+        (res: HttpResponse<IHitne[]>) => this.onSuccess(res.body, res.headers, pageToLoad),
+        () => this.onError()
+      );
   }
 }

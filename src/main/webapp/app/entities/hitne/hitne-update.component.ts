@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import { Location } from '@angular/common';
 import { IHitne, Hitne } from 'app/shared/model/hitne.model';
 import { HitneService } from './hitne.service';
 import { IPonudjaci } from 'app/shared/model/ponudjaci.model';
 import { PonudjaciService } from 'app/entities/ponudjaci/ponudjaci.service';
+import { JhiAlertService } from 'ng-jhipster';
 
 @Component({
   selector: 'jhi-hitne-update',
@@ -18,6 +19,7 @@ export class HitneUpdateComponent implements OnInit {
   isSaving = false;
   ponudjacis: IPonudjaci[] = [];
   datumpokretanjaDp: any;
+  dodaj = false;
 
   editForm = this.fb.group({
     id: [],
@@ -32,7 +34,10 @@ export class HitneUpdateComponent implements OnInit {
     protected hitneService: HitneService,
     protected ponudjaciService: PonudjaciService,
     protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
+    protected router: Router,
+    private fb: FormBuilder,
+    public _location: Location,
+    private alertService: JhiAlertService
   ) {}
 
   ngOnInit(): void {
@@ -98,5 +103,40 @@ export class HitneUpdateComponent implements OnInit {
 
   trackById(index: number, item: IPonudjaci): any {
     return item.id;
+  }
+
+  printReportZahtjev(): any {
+    this.hitneService.printReportServiceZahtjev(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
+      const file = new Blob([response], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+      this.dodaj = true;
+    });
+  }
+
+  printReportPokretanje(): any {
+    this.hitneService.printReportServicePokretanje(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
+      const file = new Blob([response], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+      this.dodaj = true;
+    });
+  }
+
+  printReportOdluka(): any {
+    this.hitneService.printReportServiceOdluka(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
+      const file = new Blob([response], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+      this.dodaj = true;
+    });
+  }
+
+  refresh(): void {
+    this.router.navigateByUrl('/new', { skipLocationChange: true }).then(() => {
+      // console.log(decodeURI(this._location.path()));
+
+      this.router.navigate([decodeURI(this._location.path())]);
+    });
   }
 }

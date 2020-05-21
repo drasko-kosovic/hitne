@@ -88,6 +88,16 @@
                 <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
                     <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
+               <button type="button" class="btn btn-danger" (click)="printReportPokretanje()">Pokretanje</button>
+
+                <button type="button" class="btn btn-warning"(click)="printReportZahtjev()">Zahtjev</button>
+                <button type="button" class="btn btn-success"(click)="printReportOdluka()">Odluka</button>
+
+
+                <button [hidden]="dodaj==false" class="btn btn-primary" (click)="refresh()" >
+                    <fa-icon icon="plus"></fa-icon><span >Dodaj</span>
+                </button>
+
             </div>
         </form>
     </div>
