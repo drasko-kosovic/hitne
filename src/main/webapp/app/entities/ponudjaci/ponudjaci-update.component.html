@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-ponudjaci-heading" jhiTranslate="hitneApp.ponudjaci.home.createOrEditLabel">Create or edit a Ponudjaci</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.ponudjac" for="field_ponudjac">Ponudjac</label>
+                    <input type="text" class="form-control" name="ponudjac" id="field_ponudjac"
+                           formControlName="ponudjac"/>
+                    <div *ngIf="editForm.get('ponudjac')!.invalid && (editForm.get('ponudjac')!.dirty || editForm.get('ponudjac')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ponudjac')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.kontakt" for="field_kontakt">Kontakt</label>
+                    <input type="text" class="form-control" name="kontakt" id="field_kontakt"
+                           formControlName="kontakt"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.adresa" for="field_adresa">Adresa</label>
+                    <input type="text" class="form-control" name="adresa" id="field_adresa"
+                           formControlName="adresa"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.grad" for="field_grad">Grad</label>
+                    <input type="text" class="form-control" name="grad" id="field_grad"
+                           formControlName="grad"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.telefon" for="field_telefon">Telefon</label>
+                    <input type="text" class="form-control" name="telefon" id="field_telefon"
+                           formControlName="telefon"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.postanskibroj" for="field_postanskibroj">Postanskibroj</label>
+                    <input type="text" class="form-control" name="postanskibroj" id="field_postanskibroj"
+                           formControlName="postanskibroj"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.pib" for="field_pib">Pib</label>
+                    <input type="text" class="form-control" name="pib" id="field_pib"
+                           formControlName="pib"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                           formControlName="fax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.ponudjaci.web" for="field_web">Web</label>
+                    <input type="text" class="form-control" name="web" id="field_web"
+                           formControlName="web"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

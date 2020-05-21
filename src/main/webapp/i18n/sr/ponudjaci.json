@@ -1,0 +1,31 @@
+{
+  "hitneApp": {
+    "ponudjaci": {
+      "home": {
+        "title": "Ponudjacis",
+        "createLabel": "Kreiraj novi Ponudjaci",
+        "createOrEditLabel": "Kreirajte ili izmenite Ponudjaci",
+        "notFound": "No Ponudjacis found"
+      },
+      "created": "Kreiran je novi Ponudjaci pod nazivom {{ param }}",
+      "updated": "Ponudjaci pod nazivom {{ param }} je ažuriran",
+      "deleted": "Ponudjaci pod nazivom {{ param }} je obrisan",
+      "delete": {
+        "question": "Da li ste sigurni da želite da obrišete Ponudjaci pod nazivom {{ id }}?"
+      },
+      "detail": {
+        "title": "Ponudjaci"
+      },
+      "ponudjac": "Ponudjac",
+      "kontakt": "Kontakt",
+      "adresa": "Adresa",
+      "grad": "Grad",
+      "telefon": "Telefon",
+      "email": "Email",
+      "postanskibroj": "Postanskibroj",
+      "pib": "Pib",
+      "fax": "Fax",
+      "web": "Web"
+    }
+  }
+}

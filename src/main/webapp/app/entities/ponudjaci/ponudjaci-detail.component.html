@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ponudjaci">
+            <h2><span jhiTranslate="hitneApp.ponudjaci.detail.title">Ponudjaci</span> {{ ponudjaci.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hitneApp.ponudjaci.ponudjac">Ponudjac</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.ponudjac }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.kontakt">Kontakt</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.kontakt }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.adresa">Adresa</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.adresa }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.grad">Grad</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.grad }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.telefon">Telefon</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.telefon }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.email">Email</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.postanskibroj">Postanskibroj</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.postanskibroj }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.pib">Pib</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.pib }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.fax">Fax</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.fax }}</span>
+                </dd>
+                <dt><span jhiTranslate="hitneApp.ponudjaci.web">Web</span></dt>
+                <dd>
+                    <span>{{ ponudjaci.web }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ponudjaci', ponudjaci.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

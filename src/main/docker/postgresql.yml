@@ -1,0 +1,11 @@
+version: '2'
+services:
+  hitne-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/hitne/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hitne
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432

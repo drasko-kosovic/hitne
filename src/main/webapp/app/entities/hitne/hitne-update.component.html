@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-hitne-heading" jhiTranslate="hitneApp.hitne.home.createOrEditLabel">Create or edit a Hitne</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.hitne.brojpokretanja" for="field_brojpokretanja">Brojpokretanja</label>
+                    <input type="number" class="form-control" name="brojpokretanja" id="field_brojpokretanja"
+                           formControlName="brojpokretanja"/>
+                    <div *ngIf="editForm.get('brojpokretanja')!.invalid && (editForm.get('brojpokretanja')!.dirty || editForm.get('brojpokretanja')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('brojpokretanja')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('brojpokretanja')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.hitne.datumpokretanja" for="field_datumpokretanja">Datumpokretanja</label>
+                    <div class="input-group">
+                        <input id="field_datumpokretanja" type="text" class="form-control" name="datumpokretanja" ngbDatepicker #datumpokretanjaDp="ngbDatepicker" formControlName="datumpokretanja"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datumpokretanjaDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('datumpokretanja')!.invalid && (editForm.get('datumpokretanja')!.dirty || editForm.get('datumpokretanja')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('datumpokretanja')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.hitne.vrijednost" for="field_vrijednost">Vrijednost</label>
+                    <input type="number" class="form-control" name="vrijednost" id="field_vrijednost"
+                           formControlName="vrijednost"/>
+                    <div *ngIf="editForm.get('vrijednost')!.invalid && (editForm.get('vrijednost')!.dirty || editForm.get('vrijednost')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('vrijednost')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('vrijednost')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.hitne.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                           formControlName="naziv"/>
+                    <div *ngIf="editForm.get('naziv')!.invalid && (editForm.get('naziv')!.dirty || editForm.get('naziv')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('naziv')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hitneApp.hitne.ponudjaci" for="field_ponudjaci">Ponudjaci</label>
+                    <select class="form-control" id="field_ponudjaci" name="ponudjaci" formControlName="ponudjaci">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ponudjaciOption.id === editForm.get('ponudjaci')!.value?.id ? editForm.get('ponudjaci')!.value : ponudjaciOption" *ngFor="let ponudjaciOption of ponudjacis; trackBy: trackById">{{ ponudjaciOption.ponudjac }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

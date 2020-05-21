@@ -1,0 +1,31 @@
+{
+  "hitneApp": {
+    "ponudjaci": {
+      "home": {
+        "title": "Ponudjacis",
+        "createLabel": "Create a new Ponudjaci",
+        "createOrEditLabel": "Create or edit a Ponudjaci",
+        "notFound": "No Ponudjacis found"
+      },
+      "created": "A new Ponudjaci is created with identifier {{ param }}",
+      "updated": "A Ponudjaci is updated with identifier {{ param }}",
+      "deleted": "A Ponudjaci is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ponudjaci {{ id }}?"
+      },
+      "detail": {
+        "title": "Ponudjaci"
+      },
+      "ponudjac": "Ponudjac",
+      "kontakt": "Kontakt",
+      "adresa": "Adresa",
+      "grad": "Grad",
+      "telefon": "Telefon",
+      "email": "Email",
+      "postanskibroj": "Postanskibroj",
+      "pib": "Pib",
+      "fax": "Fax",
+      "web": "Web"
+    }
+  }
+}

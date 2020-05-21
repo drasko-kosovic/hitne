@@ -1,0 +1,55 @@
+{
+    "name": "Hitne",
+    "fields": [
+        {
+            "fieldName": "brojpokretanja",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "datumpokretanja",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "vrijednost",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "naziv",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "ponudjaci",
+            "otherEntityRelationshipName": "hitne",
+            "relationshipName": "ponudjaci",
+            "otherEntityField": "ponudjac"
+        }
+    ],
+    "changelogDate": "20200521081900",
+    "entityTableName": "hitne",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hitne"
+    ]
+}

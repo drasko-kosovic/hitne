@@ -1,0 +1,62 @@
+{
+    "name": "Ponudjaci",
+    "fields": [
+        {
+            "fieldName": "ponudjac",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "kontakt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grad",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefon",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postanskibroj",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pib",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "web",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200521082000",
+    "entityTableName": "ponudjaci",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "hitne"
+    ]
+}

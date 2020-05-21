@@ -1,0 +1,26 @@
+{
+  "hitneApp": {
+    "hitne": {
+      "home": {
+        "title": "Hitnes",
+        "createLabel": "Create a new Hitne",
+        "createOrEditLabel": "Create or edit a Hitne",
+        "notFound": "No Hitnes found"
+      },
+      "created": "A new Hitne is created with identifier {{ param }}",
+      "updated": "A Hitne is updated with identifier {{ param }}",
+      "deleted": "A Hitne is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hitne {{ id }}?"
+      },
+      "detail": {
+        "title": "Hitne"
+      },
+      "brojpokretanja": "Brojpokretanja",
+      "datumpokretanja": "Datumpokretanja",
+      "vrijednost": "Vrijednost",
+      "naziv": "Naziv",
+      "ponudjaci": "Ponudjaci"
+    }
+  }
+}
