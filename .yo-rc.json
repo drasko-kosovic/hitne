@@ -36,7 +36,9 @@
     "skipServer": false,
     "useSass": true,
     "entitySuffix": "",
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "hitna",
+    "herokuDeployType": "git"
   },
   "entities": ["Hitne", "Ponudjaci"]
 }
