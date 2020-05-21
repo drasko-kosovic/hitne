@@ -14,6 +14,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
+import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { ErrorComponent } from './layouts/error/error.component';
     HitneHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     HitneEntityModule,
-    HitneAppRoutingModule
+    HitneAppRoutingModule,
+    TextareaAutosizeModule
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent]

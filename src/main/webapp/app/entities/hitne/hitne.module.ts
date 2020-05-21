@@ -7,9 +7,10 @@ import { HitneDetailComponent } from './hitne-detail.component';
 import { HitneUpdateComponent } from './hitne-update.component';
 import { HitneDeleteDialogComponent } from './hitne-delete-dialog.component';
 import { hitneRoute } from './hitne.route';
+import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 
 @NgModule({
-  imports: [HitneSharedModule, RouterModule.forChild(hitneRoute)],
+  imports: [HitneSharedModule, RouterModule.forChild(hitneRoute), TextareaAutosizeModule],
   declarations: [HitneComponent, HitneDetailComponent, HitneUpdateComponent, HitneDeleteDialogComponent],
   entryComponents: [HitneDeleteDialogComponent]
 })

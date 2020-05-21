@@ -59,17 +59,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="hitneApp.hitne.naziv" for="field_naziv">Naziv</label>
-                    <input type="text" class="form-control" name="naziv" id="field_naziv"
-                           formControlName="naziv"/>
-                    <div *ngIf="editForm.get('naziv')!.invalid && (editForm.get('naziv')!.dirty || editForm.get('naziv')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('naziv')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
-                        </small>
-                    </div>
-                </div>
+
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="hitneApp.hitne.ponudjaci" for="field_ponudjaci">Ponudjaci</label>
@@ -79,7 +69,17 @@
                     </select>
                 </div>
             </div>
-
+            <div class="form-group">
+                <label class="form-control-label" jhiTranslate="hitneApp.hitne.naziv" >Naziv</label>
+                <textarea  autosize cols="100" class="form-control" name="naziv" id="field_naziv"
+                           formControlName="naziv"></textarea>
+                <div *ngIf="editForm.get('naziv')!.invalid && (editForm.get('naziv')!.dirty || editForm.get('naziv')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('naziv')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
                     <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>

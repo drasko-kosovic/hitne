@@ -2,7 +2,7 @@
   "hitneApp": {
     "ponudjaci": {
       "home": {
-        "title": "Ponudjacis",
+        "title": "Ponudjaci",
         "createLabel": "Kreiraj novi Ponudjaci",
         "createOrEditLabel": "Kreirajte ili izmenite Ponudjaci",
         "notFound": "No Ponudjacis found"
@@ -22,7 +22,7 @@
       "grad": "Grad",
       "telefon": "Telefon",
       "email": "Email",
-      "postanskibroj": "Postanskibroj",
+      "postanskibroj": "Post.br.",
       "pib": "Pib",
       "fax": "Fax",
       "web": "Web"

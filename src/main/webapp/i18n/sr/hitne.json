@@ -2,10 +2,10 @@
   "hitneApp": {
     "hitne": {
       "home": {
-        "title": "Hitnes",
-        "createLabel": "Kreiraj novi Hitne",
-        "createOrEditLabel": "Kreirajte ili izmenite Hitne",
-        "notFound": "No Hitnes found"
+        "title": "Hitne",
+        "createLabel": "Kreiraj novu Hitnu",
+        "createOrEditLabel": "Kreirajte ili izmenite Hitnu nabavku",
+        "notFound": "Nema zapisa"
       },
       "created": "Kreiran je novi Hitne pod nazivom {{ param }}",
       "updated": "Hitne pod nazivom {{ param }} je ažuriran",
@@ -16,8 +16,8 @@
       "detail": {
         "title": "Hitne"
       },
-      "brojpokretanja": "Brojpokretanja",
-      "datumpokretanja": "Datumpokretanja",
+      "brojpokretanja": "Broj pokretanja",
+      "datumpokretanja": "Datum pokretanja",
       "vrijednost": "Vrijednost",
       "naziv": "Naziv",
       "ponudjaci": "Ponudjaci"

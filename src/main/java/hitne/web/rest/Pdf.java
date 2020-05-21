@@ -1,6 +1,8 @@
 package hitne.web.rest;
 
 
+import hitne.domain.viewHitnePonudjaci;
+import hitne.repository.viewHitnePonudjaciRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +48,7 @@ public class Pdf {
         Map<String, Object> params = new HashMap<>();
 
 
-         List<viewHitnePonudjaci1> hitna= (List<viewHitnePonudjaci1>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
+         List<viewHitnePonudjaci> hitna= (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
 
         //Data source Set
         JRDataSource dataSource = new JRBeanCollectionDataSource(hitna);
@@ -72,7 +74,7 @@ public class Pdf {
         Map<String, Object> params = new HashMap<>();
 
 
-        List<viewHitnePonudjaci1> viwhitna = (List<viewHitnePonudjaci1>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
+        List<viewHitnePonudjaci> viwhitna = (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
 
         //Data source Set
         JRDataSource dataSource = new JRBeanCollectionDataSource(viwhitna);
@@ -98,7 +100,7 @@ public class Pdf {
         Map<String, Object> params = new HashMap<>();
 
 
-        List<viewHitnePonudjaci1> viwhitna= (List<viewHitnePonudjaci1>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
+        List<viewHitnePonudjaci> viwhitna= (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
 
         //Data source Set
         JRDataSource dataSource = new JRBeanCollectionDataSource(viwhitna);
