@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="repPokretanje" pageWidth="595" pageHeight="859" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5e88f877-8b27-4441-9b90-7d1c7d883734">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterDbHitne.xml"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="448"/>
+	<queryString>
+		<![CDATA[select * from view_hitne]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="brojpokretanja" class="java.lang.Long"/>
+	<field name="brojzahtjeva" class="java.lang.Long"/>
+	<field name="brojodluke" class="java.lang.Long"/>
+	<field name="datumpokretanja" class="java.time.LocalDate"/>
+	<field name="datumodluke" class="java.time.LocalDate"/>
+	<field name="vrijednost" class="java.lang.Double"/>
+	<field name="naziv" class="java.lang.String"/>
+	<field name="kontakt" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="fax" class="java.lang.String"/>
+	<field name="grad" class="java.lang.String"/>
+	<field name="pib" class="java.lang.String"/>
+	<field name="ponudjac" class="java.lang.String"/>
+	<field name="postanskibroj" class="java.lang.String"/>
+	<field name="telefon" class="java.lang.String"/>
+	<field name="web" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="700" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="26" y="39" width="30" height="18" uuid="9f6ed5c5-2475-49ab-b990-876cc55a6499"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Broj:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="57" width="51" height="20" uuid="c818f2f6-7fce-41ea-b932-65ce80670937"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Podgorica, ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="26" y="237" width="508" height="35" uuid="2614979f-c4f3-4e3b-9fa5-0c4662891f43"/>
+				<textFieldExpression><![CDATA[$F{naziv}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="21" y="299" width="513" height="45" uuid="14b00b9b-e42a-4670-9cf8-50cb229958c8"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[2. Sredstva za hitnu nabavku obezbijedjena iz sopstvenih sredstava.
+3.Postupak hitne nabavke sprovešce službenik za javne nabavke u roku od 2 (dva) dana od dana donošenja ove odluke.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="204" width="509" height="20" uuid="5c62a5a0-988d-493e-abb9-22d55f9b7f5d"/>
+				<text><![CDATA[1. ZU Apoteke CG ’’MONTEFARM’’ iz Podgorice, pokrece postupak hitne nabavke za nabavku:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="174" width="380" height="17" uuid="6e372523-6b6b-4187-a624-7218c4be7805"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                       O pokretanju postupka hitne nabavke]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="0" width="470" height="39" uuid="6f4efa54-3d19-4dcc-a748-be9b0086eac5"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ ZU APOTEKE CRNE GORE
+ ’’MONTEFARM’’ PODGORICA
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="154" width="177" height="20" uuid="10b15d00-4f66-42a3-b687-bd835a76bbea"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[          ODLUKU]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="56" y="39" width="45" height="20" uuid="cd28ab25-022a-4e5d-92cd-21588d1fae5c"/>
+				<textFieldExpression><![CDATA[$F{brojpokretanja}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="155" y="359" width="245" height="35" uuid="31b63f9f-98c9-4ff4-84eb-febb54bf14aa"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                O b r a z l o ž e n j e
+                    razloga hitnosti
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="17" y="405" width="513" height="108" uuid="9bc88b8a-0b17-4e41-801a-e40f6a940c1f"/>
+				<textElement textAlignment="Justified">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Na osnovu odobrenja Ministarstva zdravlja, Fond za zdravstveno osiguranje Crne Gore, naložio je ZU Apoteke Crne Gore ’’Montefarm’’ da nabavi gore navedeni lijek.
+
+Pošto bi sprovođenje otvorenog postupka javne nabavke trajao duže od 60 dana za koji period su im potrebni ljekovi to sam donio Odluku o hitnoj nabavci.
+
+Radi se o osiguranim licima koji se liječe od teških patoloških bolesti i svako  pomjeranje terapije dovelo bi do ugrožavanja zdravlja istih.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="75" width="458" height="55" uuid="68d0c212-2a56-4094-bfec-34c8699f69e3"/>
+				<text><![CDATA[Na osnovu clana 29. Zakona o javnim nabavkama (’’Sl. list CG’’, br. 42/11, 57/14, 28/15 i 42/17) i Pravilnika o sadržaju akta i obrascima za sprovodjenje hitnih nabavki (’’Sl. List CG’’, br 47/17) ovlašceno lice ZU ACG ’’MONTEFARM’’ Podgorica, donosi
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="77" y="57" width="100" height="20" uuid="72d3f914-9642-4936-94f3-c5ecd35dc09e"/>
+				<textFieldExpression><![CDATA[$F{datumpokretanja}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="392" y="679" width="155" height="15" uuid="78662ca0-26f9-425e-9009-5259e3700cb7"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[dipl.ecc, Radoman Dragaš]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="417" y="649" width="113" height="20" uuid="00ff243b-7a52-4212-9651-77a99e008c5e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[v.d DIREKTOR,]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

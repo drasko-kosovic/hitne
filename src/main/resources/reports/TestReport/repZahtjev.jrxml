@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="repZahtjev" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4165fec-0584-4f94-88d4-be7d96979b25">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Hitne\Hitne.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="ireport.zoom" value="1.3310000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1716"/>
+	<queryString>
+		<![CDATA[select * from view_hitne]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="brojpokretanja" class="java.lang.Long"/>
+	<field name="brojzahtjeva" class="java.lang.Long"/>
+	<field name="brojodluke" class="java.lang.Long"/>
+	<field name="datumpokretanja" class="java.sql.Date"/>
+	<field name="datumodluke" class="java.sql.Date"/>
+	<field name="vrijednost" class="java.lang.Double"/>
+	<field name="naziv" class="java.lang.String"/>
+	<field name="kontakt" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="fax" class="java.lang.String"/>
+	<field name="grad" class="java.lang.String"/>
+	<field name="pib" class="java.lang.String"/>
+	<field name="ponudjac" class="java.lang.String"/>
+	<field name="postanskibroj" class="java.lang.String"/>
+	<field name="telefon" class="java.lang.String"/>
+	<field name="web" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="-19" y="-3334" width="458" height="50" uuid="68dc949f-190d-4f90-96ac-6afbc3b658ec"/>
+				<text><![CDATA[Na onovu clana 29 Zakona o javnim nabavkama  („Službeni list CG“, br. 42/11 i 57/14 i 42/17) i Pravilnika o sadrzaju akta i obrascima za sprovodenje hitnih nabavki (Službeni list CG“, br  49/17 od 27.07.2017 god) Zdravstvena ustanova Apoteke Crne Gore Montefarm  dostavlja:
+]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="-3254" width="458" height="20" backcolor="#D6D2D2" uuid="7a4f0cc2-c99f-4835-b542-75a583bc141b"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="-3216" width="458" height="20" backcolor="#E3E1E1" uuid="7e4eed08-9e74-4e9e-9f48-b32d41561a64"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="20" y="0" width="140" height="20" uuid="55213781-9122-49e1-a524-ea94e0423cdf"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[I   Podaci o naruciocu]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="-19" y="-3190" width="458" height="182" uuid="41fd6ade-2ef4-4cb2-9b88-1c6be3ef98c5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<line>
+					<reportElement x="2" y="41" width="456" height="1" uuid="e6ded371-4290-4fe0-b5e9-c7860b354b4e"/>
+				</line>
+				<line>
+					<reportElement x="2" y="81" width="453" height="2" uuid="aab81273-2b8c-42af-a684-9da163f6a250"/>
+				</line>
+				<line>
+					<reportElement x="1" y="111" width="454" height="1" uuid="4fa0e4f4-2aec-43b9-93c0-23a46c7fca8e"/>
+				</line>
+				<line>
+					<reportElement x="2" y="141" width="455" height="4" uuid="71c4594b-67ab-4a29-b8da-51583ab93be6"/>
+				</line>
+				<line>
+					<reportElement x="220" y="0" width="1" height="182" uuid="4f3daf07-b5a9-43d7-8d8c-49c28e140b27"/>
+				</line>
+				<staticText>
+					<reportElement x="3" y="0" width="197" height="41" uuid="2c823e5b-c12b-48ec-99a5-045de54a0e15"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Narucilac:
+Zdravstvena ustanova Apoteke Crne Gore Montefarm
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="3" width="225" height="30" uuid="6c512662-b98e-4aa3-857c-dc6b1917ec52"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Lice za davanje informacija:
+Draško Kosovic
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="51" width="209" height="30" uuid="29c6a178-6a5a-42cb-a015-a7c0f2506c11"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Adresa:
+Ljubljanska b.b.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="52" width="209" height="30" uuid="8adf1a75-108b-4849-8159-81597791f736"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Poštanski broj:
+81000
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="83" width="209" height="30" uuid="13bf1d1d-20a9-491f-844b-5617bf0960bf"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Sjedište:
+Podgorica
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="84" width="199" height="30" uuid="cebc4cea-7e51-4cce-9275-833b13411036"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[PIB (Maticni broj):
+02017105
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="112" width="217" height="30" uuid="5d8824bf-c8ff-4c47-935a-9936fb9bb1d7"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Telefon:
+020-405-934, 067-217-599
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="146" width="217" height="30" uuid="a883dfff-e43e-4586-bb3d-c3087abed674"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[E-mail adresa:
+tenderi@montefarm.co.me
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="231" y="115" width="210" height="30" uuid="ad2aec94-4fc0-446d-8338-b4b9801369d7"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Faks:
+020235086
+]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-2960" width="459" height="20" backcolor="#E3E1E1" uuid="30f27ac8-a253-4b1f-ac27-331100233c63"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="20" y="0" width="163" height="20" uuid="8f332b7b-f0d0-420b-9f83-747d00ef18d6"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[II  Predmet nabavke]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="-18" y="-2920" width="457" height="50" uuid="d1e372a0-c3eb-453d-8bf7-50b7bf97aaba"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[a)	Vrsta predmeta nabavke
+
+  Robe
+]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="-19" y="-2860" width="458" height="20" backcolor="#E3E1E1" uuid="51c8d360-897a-49c8-8ffe-04ce2201177d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="20" y="0" width="161" height="20" uuid="035a9b33-86ac-4d19-ae2a-2fef5d01ad1a"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[III  Opis predmeta nabavke]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="231" y="-3448" width="100" height="30" uuid="9d82d7be-b024-4198-b3d4-873fdc5e1a76"/>
+				<text><![CDATA[broj]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-20" y="-3408" width="461" height="53" uuid="ae191348-ef46-4851-a7b4-b7707234463e"/>
+				<text><![CDATA[Narucilac:
+Broj:
+Datum: .
+Narucilac: Zdravstvena ustanova Apoteke Crne Gore Montefarm Podgorica
+Broj: /1
+Datum: .
+
+
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="-3408" width="265" height="14" uuid="f841534e-7308-4ba1-9a14-8f3f91af2290"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Zdravstvena ustanova Apoteke Crne Gore Montefarm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="-3408" width="110" height="14" uuid="812899c2-1f53-4df3-b213-5723e48b6b40"/>
+				<text><![CDATA[Podgorica]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="-15" y="-2778" width="458" height="20" backcolor="#E3E1E1" uuid="7c8594d7-e56e-4032-9d6e-1336f1cd50af"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="20" y="0" width="161" height="20" uuid="46703157-64f1-4281-8526-748b6cbb9d6c"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[IV  Procijenjena vrijednost nabavke]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="17" y="283" width="483" height="174" uuid="985f3f97-81c6-4ad2-9f7d-4ddec8c0796f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<line>
+					<reportElement x="1" y="100" width="482" height="3" uuid="ca8fbeda-63cc-407d-a84e-34887754e2e2"/>
+				</line>
+				<staticText>
+					<reportElement x="15" y="1" width="207" height="39" uuid="62668867-36e5-48b1-bddf-9cb9d85b47e2"/>
+					<text><![CDATA[Narucilac:
+Zdravstvena ustanova Apoteke Crne Gore Montefarm
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="16" y="42" width="207" height="30" uuid="a1e53f31-3a54-4820-8749-3f54969c6a69"/>
+					<text><![CDATA[Adresa:
+Ljubljanska b.b.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="72" width="212" height="30" uuid="8d88516c-5ae4-477f-928a-2d893771d445"/>
+					<text><![CDATA[Sjedište:
+Podgorica
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="111" width="208" height="30" uuid="820a64e2-4796-4698-a893-7e01cd43a4c2"/>
+					<text><![CDATA[Telefon:
+020-405-934, 067217599
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="144" width="208" height="30" uuid="520369a7-4018-4820-bce8-9cb491e6cdb9"/>
+					<text><![CDATA[E-mail adresa:
+tenderi@montefarm.co.me
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="271" y="11" width="207" height="30" uuid="7f114e44-42ab-4124-918b-a87072ea00e5"/>
+					<text><![CDATA[Lice za davanje informacija:
+Draško Kosovic
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="271" y="48" width="207" height="27" uuid="c68fe3d5-342f-4bb3-990c-e9e851d0cb16"/>
+					<text><![CDATA[Poštanski broj:
+81000
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="271" y="114" width="208" height="30" uuid="c0020ba7-2944-482a-b803-d05b940f368b"/>
+					<text><![CDATA[Faks:
+020235086
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="271" y="147" width="162" height="27" uuid="06437242-6f4b-44e6-ab0c-1e3425d3d0fc"/>
+					<text><![CDATA[Internet stranica (web):
+www.montefarm.co.me
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="271" y="81" width="185" height="24" uuid="d2e9c9bf-6bc7-4560-aa96-38ee75606996"/>
+					<text><![CDATA[PIB (Maticni broj):02017105
+
+]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="20" y="16" width="507" height="63" uuid="9a45b938-a6b5-4745-a3eb-c9e7b59b1c01"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Narucilac: Zdravstvena ustanova Apoteke Crne Gore Montefarm Podgorica
+
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="59" width="41" height="22" uuid="5c0dfa71-b107-4f54-bdc2-f250094c4859"/>
+				<text><![CDATA[Datum:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="43" width="28" height="14" uuid="41bb29af-6b00-4c5d-95f6-1ea0a01b6218"/>
+				<text><![CDATA[Broj:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="93" width="509" height="60" uuid="a5e00f8c-7152-4cb8-ade3-d10fb39ec2e6"/>
+				<text><![CDATA[Na onovu clana 29 Zakona o javnim nabavkama  („Službeni list CG“, br. 42/11 i 57/14 i 42/17) i Pravilnika o sadrzaju akta i obrascima za sprovodenje hitnih nabavki (Službeni list CG“, br  49/17 od 27.07.2017 god) Zdravstvena ustanova Apoteke Crne Gore Montefarm  dostavlja:]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="20" y="503" width="482" height="29" backcolor="#C4C0C0" uuid="f0f93bbf-3c3d-463b-9391-18407666de67"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="14" y="7" width="388" height="22" uuid="0d9b537a-55cc-4728-b0c5-e7ab5690c37a"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[II  Predmet nabavke]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="18" y="236" width="480" height="19" backcolor="#C4C0C0" uuid="2c648854-e01f-4317-95a2-54e2f12464bc"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="16" y="0" width="388" height="19" uuid="09601080-7c51-4080-aa0a-e2ee0a5d0751"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[I   Podaci o naruciocu]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="17" y="194" width="481" height="32" backcolor="#A8A7A7" uuid="03d6eb3e-643f-48a0-a53d-cf42c1fb3b59"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="31" y="7" width="374" height="25" uuid="adb39228-5d79-4aba-bbfd-5c6893e9a3a2"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ZAHTJEV ZA DOSTAVLJANJE PONUDA ZA HITNE NABAVKE]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="34" y="547" width="338" height="39" uuid="1af205de-7267-4bb2-86b3-42738e046140"/>
+				<text><![CDATA[a)	Vrsta predmeta nabavke
+
+ Robe
+]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="43" width="117" height="14" uuid="166fb677-5039-4f18-8f9d-432a78e59f42"/>
+				<textFieldExpression><![CDATA[$F{brojzahtjeva}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="64" y="59" width="87" height="20" uuid="827a337a-0abd-4291-84a9-d9cf3815c5bb"/>
+				<textFieldExpression><![CDATA[$F{datumpokretanja}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="17" y="323" width="483" height="1" uuid="8b4c057f-2237-46f8-8cbc-0bbfae684ead"/>
+			</line>
+			<line>
+				<reportElement x="15" y="356" width="485" height="2" uuid="a64382ce-6bbf-4eb3-b20b-0dafd3f8dbbb"/>
+			</line>
+			<line>
+				<reportElement x="17" y="424" width="483" height="1" uuid="f23eb7fb-109f-44c5-979e-2e65ce12f1ad"/>
+			</line>
+			<line>
+				<reportElement x="255" y="284" width="1" height="173" uuid="91e38d36-b80a-4237-9ff5-15bcb7a9597e"/>
+			</line>
+			<frame>
+				<reportElement mode="Opaque" x="20" y="600" width="484" height="29" backcolor="#C4C0C0" uuid="3ac8838c-ba92-4ff9-9867-2df3f0d94b66"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="14" y="7" width="388" height="22" uuid="697d3feb-ff1e-4b18-956c-4c8e03230124"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[III  Opis predmeta nabavke]]></text>
+				</staticText>
+			</frame>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="46" y="639" width="456" height="30" uuid="0a5c0df9-9bc6-48ec-9e58-d2868d02b87a"/>
+				<textFieldExpression><![CDATA[$F{naziv}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="197" y="755" width="287" height="20" uuid="0b953d1c-3a5e-4e80-a920-1aa314468133"/>
+				<textFieldExpression><![CDATA[$F{vrijednost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="50" y="755" width="116" height="20" uuid="6e9e026c-dcb0-4c56-aaa7-6b68294cc76a"/>
+				<text><![CDATA[procijenjena vrijednost:]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="20" y="718" width="482" height="29" backcolor="#C4C0C0" uuid="63dbd67a-e0fe-4755-98d2-77a3422cdce2"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" x="14" y="4" width="388" height="22" uuid="4acdea27-518a-451c-8949-2143b0120264"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[IV  Procijenjena vrijednost nabavke]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="802" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement mode="Opaque" x="-19" y="-3292" width="459" height="20" backcolor="#E3E1E1" uuid="a4c9f423-9575-4f79-87e3-6961323eaa84"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="20" y="0" width="163" height="20" uuid="0854a810-44b1-44df-be45-6f0d5313be82"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VI  Nacin placanja]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="-18" y="-3378" width="459" height="20" backcolor="#E3E1E1" uuid="b8c5c961-2aa9-492e-967c-92ffb5863825"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="20" y="0" width="163" height="20" uuid="e15fdf43-72db-4783-9d7a-3902a586bd88"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[V Tehnicke karakterisike  nabavke]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="-3240" width="470" height="20" backcolor="#E3E1E1" uuid="9e5fe197-ae4e-47db-b37f-b591b2aa2e97"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="9" y="0" width="174" height="20" uuid="2f9a369c-116b-4d19-a697-78ccda4ea08f"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VII  Rok isporuke nabavke]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="-16" y="-3102" width="459" height="20" backcolor="#E3E1E1" uuid="bf063107-1255-4811-9b92-1f2f62b79ed4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="20" y="0" width="163" height="20" uuid="42e467ae-acb4-4bba-8d8d-bdc76c05b83f"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[IX Rok i nacin dostavljanja ponuda]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="-19" y="-3168" width="459" height="20" backcolor="#E3E1E1" uuid="34e4d4ff-d1f5-4255-aab2-a8ded6c71a25"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="20" y="0" width="250" height="20" uuid="1ef72d76-c572-4352-a162-a685213a82dc"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VIII  Kriterijum za izbor najpovoljnije ponude]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="-19" y="-3038" width="470" height="20" backcolor="#E3E1E1" uuid="a79d34ca-0319-4ea5-a6ff-0b19c1379b63"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="9" y="0" width="361" height="20" uuid="0988e8d8-ad5c-49ba-994d-908c45cca43d"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[X Rok za donosenje obavjestenja o ishodu postupka]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="-15" y="-3263" width="376" height="15" uuid="ebdbe210-4de7-488a-aa5e-ae6b4f58fc0a"/>
+				<text><![CDATA[90 dana od dana isporuke]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-20" y="-3202" width="301" height="24" uuid="9149e27b-69f6-4b56-a568-5d49135d818c"/>
+				<text><![CDATA[10 dana od dana narudžbe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-19" y="-3138" width="340" height="30" uuid="2462cb62-c16e-439c-8fc6-e3149c7a63a9"/>
+				<text><![CDATA[Najniža  ponudena cijena              100  bodova]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-15" y="-3078" width="452" height="31" uuid="22db53d0-82b1-4341-b713-8040708df1f7"/>
+				<text><![CDATA[Ponude se predaju radnim danima od 07 do 13 sati, zakljucno sa  03/02/2020 godine do 09 sati, nesporednom predajom na arhivi narucioca, adresa Ljubljanska b.b Podgorica ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-15" y="-3008" width="396" height="30" uuid="a255d76d-1ef9-4350-83cb-1d1439dca69b"/>
+				<text><![CDATA[2 dana od datuma zahtjeva.]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="-19" y="-2978" width="470" height="20" backcolor="#E3E1E1" uuid="25787f9d-cc3f-4242-827b-c79b85a822fd"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="9" y="0" width="361" height="20" uuid="4a8fe08b-f5e3-4bab-a40e-875a056ce9ce"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[XI Druge informacije]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="-19" y="-2848" width="182" height="20" uuid="181bd1e1-24fb-4064-9070-96e26d3c031a"/>
+				<text><![CDATA[Službenik za javne nabavke
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="-2848" width="182" height="20" uuid="b89be14e-b57a-4985-82b5-31ee4dac37ed"/>
+				<text><![CDATA[Ovlašceno lice narucioca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="-2807" width="170" height="30" uuid="bd45c204-0894-4354-9b58-3f6f6155ff13"/>
+				<text><![CDATA[direktor, Radoman Dragaš.dipl.ecc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="-2840" width="60" height="30" uuid="16bdc6f4-c390-49dc-9aa5-c574e0f1fab7"/>
+				<text><![CDATA[M.P]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-19" y="-2808" width="170" height="30" uuid="472c836b-7564-4b27-a590-b7830772a975"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="24" y="116" width="475" height="29" backcolor="#C4C0C0" uuid="f0ff76a1-8164-46d4-b01c-a62517ff6d05"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" x="81" y="4" width="388" height="22" uuid="b67b14f0-9004-4eb4-a73e-c55ff06c78cf"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[VI  Nacin placanja]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="24" y="241" width="475" height="29" backcolor="#C4C0C0" uuid="4f1fb1e3-ea33-4cb1-a38f-7ebea9997d46"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" x="81" y="7" width="388" height="22" uuid="ef41967e-e0c7-4896-87d2-b7192fbfff3d"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[VIII  Kriterijum za izbor najpovoljnije ponude]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="24" y="171" width="475" height="29" backcolor="#C4C0C0" uuid="61c60c6b-024a-460a-bebc-c66101db19ea"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" x="81" y="7" width="388" height="22" uuid="afabdb3d-f9ab-4043-99bc-efe310ac2115"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[VII  Rok isporuke nabavke]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="46" y="209" width="251" height="15" uuid="895724a5-46d1-4de8-a018-d242fc54ef77"/>
+				<text><![CDATA[10 dana od dana narudžbe]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="26" y="346" width="475" height="29" backcolor="#C4C0C0" uuid="0a86af67-2d29-4e9d-9b67-0214b454103b"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" x="81" y="4" width="388" height="22" uuid="0698616a-8845-4641-bb36-0bbc2748b643"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[IX Rok i nacin dostavljanja ponuda]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="46" y="384" width="430" height="50" uuid="f64bb92e-3708-4ed6-9731-4029420a1105"/>
+				<text><![CDATA[Ponude se predaju radnim danima od 07 do 13 sati, zakljucno sa                                              godine do 09 sati, nesporednom predajom na arhivi narucioca, adresa Ljubljanska b.b Podgorica ]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="26" y="436" width="475" height="29" backcolor="#C4C0C0" uuid="7e245e8e-0e19-449d-8985-accdfb363ef5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" x="81" y="4" width="388" height="22" uuid="be401b24-e0b3-4c8d-a6dd-cf7741f07fd6"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[X Rok za donosenje obavjestenja o ishodu postupka]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement positionType="Float" x="46" y="477" width="160" height="16" uuid="bccb83c3-6af5-49d1-bc09-a1205c99d550"/>
+				<text><![CDATA[2 dana]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="FixRelativeToBottom" x="351" y="384" width="98" height="13" uuid="ea1115ad-a575-42c8-8ed9-b03cdacda6dc"/>
+				<textFieldExpression><![CDATA[$F{datumodluke}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="46" y="285" width="346" height="19" uuid="c0bc969e-c200-4f6c-9db7-f2ac8307ad39"/>
+				<text><![CDATA[Najniža  ponudena cijena              100  bodova]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="26" y="493" width="475" height="29" backcolor="#C4C0C0" uuid="ffafd51c-9fce-4b0f-9948-81431f7d78a3"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" x="81" y="4" width="388" height="22" uuid="803b6d55-dcf7-45f5-8a2c-a834864514e1"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[XI Druge informacije]]></text>
+				</staticText>
+			</frame>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="46" y="54" width="438" height="37" uuid="aaaab173-b232-4f42-a8f6-4ce6efc70e4a"/>
+				<textFieldExpression><![CDATA[$F{naziv}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" mode="Opaque" x="24" y="14" width="482" height="29" backcolor="#C4C0C0" uuid="ae418a9c-c0b1-463f-8336-2508f0433a53"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" x="81" y="7" width="388" height="22" uuid="1ddaa0c3-1450-4416-ac27-fbf201e741aa"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[V Tehnicke karakterisike  nabavke]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="351" y="723" width="106" height="20" uuid="f8df873a-7b18-4374-9cf0-ca33670a690c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[v.d DIREKTOR,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="344" y="747" width="129" height="20" uuid="0f4d421b-dd94-410b-ab7c-08247fa946e3"/>
+				<text><![CDATA[dipl.ecc, Radoman Dragas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="35" y="723" width="130" height="20" uuid="65f0e626-a132-49b4-b631-59c9f60706b3"/>
+				<text><![CDATA[Sluzbenik za Javne nabavke]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="35" y="747" width="142" height="20" uuid="a9eba372-a833-402f-ba98-72c2ea1c4f07"/>
+				<text><![CDATA[dipl.ecc, Drasko Kosovic]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="228" y="723" width="27" height="20" uuid="c28b4bb5-a281-4abb-9b5f-7aee967de252"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[M.P]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="46" y="145" width="245" height="13" uuid="72ccf49d-38a4-474c-9036-bf60edcd53ac"/>
+				<text><![CDATA[90 dana od dana isporuke]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
