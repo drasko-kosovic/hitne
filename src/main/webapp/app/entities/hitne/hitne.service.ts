@@ -77,7 +77,7 @@ export class HitneService {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/pokretanje/' + brojpokretanja, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/pokretanje/' + brojpokretanja, httpOptions);
   }
 
   printReportServiceOdluka(brojodluke: number | undefined): any {
@@ -85,13 +85,13 @@ export class HitneService {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/odluka/' + brojodluke, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/odluka/' + brojodluke, httpOptions);
   }
   printReportServiceZahtjev(brojzahtjeva: number | undefined): any {
     const httpOptions = {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/zahtjev/' + brojzahtjeva, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/zahtjev/' + brojzahtjeva, httpOptions);
   }
 }
