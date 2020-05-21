@@ -70,6 +70,7 @@ export class HitneUpdateComponent implements OnInit {
       this.subscribeToSaveResponse(this.hitneService.update(hitne));
     } else {
       this.subscribeToSaveResponse(this.hitneService.create(hitne));
+      this.dodaj = true;
     }
   }
 
@@ -94,7 +95,7 @@ export class HitneUpdateComponent implements OnInit {
 
   protected onSaveSuccess(): void {
     this.isSaving = false;
-    this.previousState();
+    // this.previousState();
   }
 
   protected onSaveError(): void {
