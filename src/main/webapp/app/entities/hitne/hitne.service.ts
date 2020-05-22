@@ -38,6 +38,12 @@ export class HitneService {
       .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
   }
 
+  findByBroj(broj: number): Observable<any> {
+    return this.http
+      .get<IHitne>(`${this.resourceUrl}?brojpokretanja.equals= ${broj}`, { observe: 'response' })
+      .pipe(map((res: any) => this.convertDateFromServer(res)));
+  }
+
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
     return this.http

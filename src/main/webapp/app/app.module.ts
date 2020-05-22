@@ -14,6 +14,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
+import { UniqueUsernameValidatorDirective } from 'app/shared/validation/unique-username-validator.directive';
 
 @NgModule({
   imports: [
@@ -25,7 +26,15 @@ import { ErrorComponent } from './layouts/error/error.component';
     HitneEntityModule,
     HitneAppRoutingModule
   ],
-  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+  declarations: [
+    MainComponent,
+    NavbarComponent,
+    ErrorComponent,
+    PageRibbonComponent,
+    ActiveMenuDirective,
+    FooterComponent,
+    UniqueUsernameValidatorDirective
+  ],
   bootstrap: [MainComponent]
 })
 export class HitneAppModule {}

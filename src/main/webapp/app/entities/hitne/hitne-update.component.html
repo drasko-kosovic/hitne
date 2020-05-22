@@ -25,6 +25,9 @@
                             [hidden]="!editForm.get('brojpokretanja')?.errors?.number" jhiTranslate="entity.validation.number">
                             This field should be a number.
                         </small>
+<!--                        <div class="text-danger" *ngIf="editForm.get('brojpokretanja').invalid && (editForm.get('brojpokretanja').dirty || editForm.get('brojpokretanja').touched)">-->
+<!--                            Username already exists-->
+<!--                        </div>-->
                     </div>
                 </div>
 
@@ -68,6 +71,12 @@
                         <option [ngValue]="null"></option>
                         <option [ngValue]="ponudjaciOption.id === editForm.get('ponudjaci')!.value?.id ? editForm.get('ponudjaci')!.value : ponudjaciOption" *ngFor="let ponudjaciOption of ponudjacis; trackBy: trackById">{{ ponudjaciOption.ponudjac }}</option>
                     </select>
+                    <div *ngIf="editForm.get('ponudjaci')!.invalid && (editForm.get('ponudjaci')!.dirty || editForm.get('ponudjaci')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ponudjaci')?.errors?.required" jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                     </div>
                 </div>
             </div>
             <div class="form-group">

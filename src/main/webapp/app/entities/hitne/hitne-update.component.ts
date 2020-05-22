@@ -10,6 +10,7 @@ import { HitneService } from './hitne.service';
 import { IPonudjaci } from 'app/shared/model/ponudjaci.model';
 import { PonudjaciService } from 'app/entities/ponudjaci/ponudjaci.service';
 import { JhiAlertService } from 'ng-jhipster';
+import { uniqueUsernameValidator } from 'app/shared/validation/unique-username-validator.directive';
 
 @Component({
   selector: 'jhi-hitne-update',
@@ -23,11 +24,11 @@ export class HitneUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    brojpokretanja: [null, [Validators.required]],
+    brojpokretanja: [null, [Validators.required], [uniqueUsernameValidator(this.hitneService)]],
     datumpokretanja: [null, [Validators.required]],
     vrijednost: [null, [Validators.required]],
     naziv: [null, [Validators.required]],
-    ponudjaci: []
+    ponudjaci: [null, [Validators.required]]
   });
 
   constructor(
