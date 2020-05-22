@@ -38,7 +38,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+<!--                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>-->
                     <th scope="col"  jhiSortBy="brojpokretanja"><span jhiTranslate="hitneApp.hitne.brojpokretanja">Brojpokretanja</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="datumpokretanja"><span jhiTranslate="hitneApp.hitne.datumpokretanja">Datumpokretanja</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="vrijednost"><span jhiTranslate="hitneApp.hitne.vrijednost">Vrijednost</span> <fa-icon icon="sort"></fa-icon></th>
@@ -49,7 +49,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let hitne of hitnes ;trackBy: trackId">
-                    <td><a [routerLink]="['/hitne', hitne.id, 'view']">{{ hitne.id }}</a></td>
+<!--                    <td><a [routerLink]="['/hitne', hitne.id, 'view']">{{ hitne.id }}</a></td>-->
                     <td>{{ hitne.brojpokretanja }}</td>
                     <td>{{ hitne.datumpokretanja | date:'mediumDate' }}</td>
                     <td>{{ hitne.vrijednost }}</td>
