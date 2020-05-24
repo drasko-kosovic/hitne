@@ -22,7 +22,7 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+<!--                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>-->
                     <th scope="col"  jhiSortBy="ponudjac"><span jhiTranslate="hitneApp.ponudjaci.ponudjac">Ponudjac</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="kontakt"><span jhiTranslate="hitneApp.ponudjaci.kontakt">Kontakt</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="adresa"><span jhiTranslate="hitneApp.ponudjaci.adresa">Adresa</span> <fa-icon icon="sort"></fa-icon></th>
@@ -38,7 +38,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let ponudjaci of ponudjacis ;trackBy: trackId">
-                    <td><a [routerLink]="['/ponudjaci', ponudjaci.id, 'view']">{{ ponudjaci.id }}</a></td>
+<!--                    <td><a [routerLink]="['/ponudjaci', ponudjaci.id, 'view']">{{ ponudjaci.id }}</a></td>-->
                     <td>{{ ponudjaci.ponudjac }}</td>
                     <td>{{ ponudjaci.kontakt }}</td>
                     <td>{{ ponudjaci.adresa }}</td>
