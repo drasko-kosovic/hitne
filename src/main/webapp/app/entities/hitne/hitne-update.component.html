@@ -91,23 +91,41 @@
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
-                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
-                </button>
+<!--                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">-->
+<!--                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>-->
+<!--                </button>-->
 
-                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+<!--                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">-->
+<!--                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>-->
+<!--                </button>-->
+<!--               <button type="button" class="btn btn-danger" (click)="printReportPokretanje()">Pokretanje</button>-->
+
+<!--                <button type="button" class="btn btn-warning"(click)="printReportZahtjev()">Zahtjev</button>-->
+<!--                <button type="button" class="btn btn-success"(click)="printReportOdluka()">Odluka</button>-->
+
+
+<!--                <button [hidden]="dodaj==false" class="btn btn-primary" (click)="refresh()" >-->
+<!--                    <fa-icon icon="plus"></fa-icon><span >Dodaj</span>-->
+<!--                </button>-->
+
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary"(click)="printReportPokretanje()">Pokretanje</button>
+                <button type="button" class="btn btn-primary"(click)="printReportZahtjev()">Zahtjev</button>
+                <button type="button" class="btn btn-primary"(click)="printReportOdluka()">Odluka</button>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger"(click)="printReportOdluka()">Stampaj sve</button>
+            </div>
+            <div class="btn-group">
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-success">
                     <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
-               <button type="button" class="btn btn-danger" (click)="printReportPokretanje()">Pokretanje</button>
-
-                <button type="button" class="btn btn-warning"(click)="printReportZahtjev()">Zahtjev</button>
-                <button type="button" class="btn btn-success"(click)="printReportOdluka()">Odluka</button>
-
-
-                <button [hidden]="dodaj==false" class="btn btn-primary" (click)="refresh()" >
-                    <fa-icon icon="plus"></fa-icon><span >Dodaj</span>
+                <button type="button" id="cancel-save" class="btn btn-warning" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-
+                <button type="button" [disabled]="dodaj==false" class="btn btn-primary" (click)="refresh()">Dodaj</button>
             </div>
         </form>
     </div>

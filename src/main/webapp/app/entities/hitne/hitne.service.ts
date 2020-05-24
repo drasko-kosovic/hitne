@@ -86,18 +86,18 @@ export class HitneService {
     return this.http.get<any>('https://hitna.herokuapp.com/report/pokretanje/' + brojpokretanja, httpOptions);
   }
 
-  printReportServiceOdluka(brojodluke: number | undefined): any {
+  printReportServiceOdluka(brojpokretanja: number | undefined): any {
     const httpOptions = {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('https://hitna.herokuapp.com/report/odluka/' + brojodluke, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/odluka/' + brojpokretanja, httpOptions);
   }
-  printReportServiceZahtjev(brojzahtjeva: number | undefined): any {
+  printReportServiceZahtjev(brojpokretanja: number | undefined): any {
     const httpOptions = {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('https://hitna.herokuapp.com/report/zahtjev/' + brojzahtjeva, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/zahtjev/' + brojpokretanja, httpOptions);
   }
 }

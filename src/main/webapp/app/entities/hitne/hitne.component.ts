@@ -125,4 +125,28 @@ export class HitneComponent implements OnInit, OnDestroy {
         () => this.onError()
       );
   }
+
+  printReportZahtjev(broj: number): any {
+    this.hitneService.printReportServiceZahtjev(broj).subscribe((response: BlobPart) => {
+      const file = new Blob([response], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+    });
+  }
+
+  printReportPokretanje(broj: number): any {
+    this.hitneService.printReportServicePokretanje(broj).subscribe((response: BlobPart) => {
+      const file = new Blob([response], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+    });
+  }
+
+  printReportOdluka(broj: number): any {
+    this.hitneService.printReportServiceOdluka(broj).subscribe((response: BlobPart) => {
+      const file = new Blob([response], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+    });
+  }
 }
