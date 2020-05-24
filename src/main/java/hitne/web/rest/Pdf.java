@@ -114,4 +114,33 @@ public class Pdf {
         JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
     }
 
+
+    @GetMapping(path = "/print/{brojpokretanja}")
+    @ResponseBody
+    public void getPrint(HttpServletResponse response, @PathVariable Long brojpokretanja) throws Exception {
+
+        Resource resource = context.getResource("classpath:reports/repOdluka.jrxml");
+
+        InputStream inputStream = resource.getInputStream();
+        JasperReport report = JasperCompileManager.compileReport(inputStream);
+
+        Map<String, Object> params = new HashMap<>();
+
+
+        List<viewHitnePonudjaci> viwhitna = (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
+
+        //Data source Set
+        JRDataSource dataSource = new JRBeanCollectionDataSource(viwhitna);
+        params.put("datasource", dataSource);
+
+        //Make jasperPrint
+        JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
+
+//        JasperPrintManager.printReport(jasperPrint, true);
+       
+        jasperPrint.setPageHeight(100);
+        jasperPrint.setPageWidth(80);
+        jasperPrint.setOrientation(jasperPrint.getOrientationValue().LANDSCAPE);
+        JasperPrintManager.printReport(jasperPrint, false);
+    }
 }
