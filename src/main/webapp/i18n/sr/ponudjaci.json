@@ -3,8 +3,8 @@
     "ponudjaci": {
       "home": {
         "title": "Ponudjaci",
-        "createLabel": "Kreiraj novi Ponudjaci",
-        "createOrEditLabel": "Kreirajte ili izmenite Ponudjaci",
+        "createLabel": "Kreiraj novog Ponudjaca",
+        "createOrEditLabel": "Kreirajte ili izmenite Ponudjaca",
         "notFound": "No Ponudjacis found"
       },
       "created": "Kreiran je novi Ponudjaci pod nazivom {{ param }}",
