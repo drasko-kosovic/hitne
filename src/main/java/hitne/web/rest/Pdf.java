@@ -11,6 +11,9 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.Copies;
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -136,8 +139,8 @@ public class Pdf {
         //Make jasperPrint
         JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
 
-//        JasperPrintManager.printReport(jasperPrint, true);
-       
+        PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
+        printRequestAttributeSet.add(new Copies(2));
         jasperPrint.setPageHeight(100);
         jasperPrint.setPageWidth(80);
         jasperPrint.setOrientation(jasperPrint.getOrientationValue().LANDSCAPE);
