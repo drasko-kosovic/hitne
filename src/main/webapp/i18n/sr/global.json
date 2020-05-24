@@ -117,7 +117,8 @@
       "maxbytes": "Polje ne može biti veće od {{ max }} bajtova.",
       "pattern": "Polje mora da sledi obrazac {{ pattern }}.",
       "number": "Polje mora biti broj.",
-      "datetimelocal": "Polje mora biti datum i vreme."
+      "datetimelocal": "Polje mora biti datum i vreme.",
+      "duplicate": "Upisali ste broj pokretanja koji vec postoji, upisite neku drugi broj koji niste koristili."
     }
   },
   "error": {
