@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 
 import { IPonudjaci, Ponudjaci } from 'app/shared/model/ponudjaci.model';
 import { PonudjaciService } from './ponudjaci.service';
+import { Validacija } from 'app/shared/custom-validators/validacija';
 
 @Component({
   selector: 'jhi-ponudjaci-update',
@@ -18,6 +19,7 @@ export class PonudjaciUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     ponudjac: [null, [Validators.required]],
+    // ponudjac: [null, [Validators.required],[ Validacija.cannotContainSpace]],
     kontakt: [],
     adresa: [],
     grad: [],

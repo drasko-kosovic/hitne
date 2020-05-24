@@ -20,6 +20,10 @@
                                *ngIf="editForm.get('ponudjac')?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ponudjac')?.errors?.cannotContainSpace" jhiTranslate="entity.validation.required">
+                           Ne moze
+                        </small>
                     </div>
                 </div>
 
