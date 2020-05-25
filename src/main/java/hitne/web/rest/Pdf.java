@@ -1,10 +1,14 @@
 package hitne.web.rest;
 
 
+import hitne.domain.Hitne;
 import hitne.domain.viewHitnePonudjaci;
 import hitne.repository.viewHitnePonudjaciRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.JRPrintServiceExporter;
+import net.sf.jasperreports.engine.export.JRPrintServiceExporterParameter;
+import net.sf.jasperreports.engine.type.OrientationEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
@@ -13,8 +17,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
-import javax.print.attribute.standard.Copies;
+import javax.print.attribute.standard.*;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.print.PrinterJob;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -118,11 +123,11 @@ public class Pdf {
     }
 
 
-    @GetMapping(path = "/print/{brojpokretanja}")
-    @ResponseBody
-    public void getPrint(HttpServletResponse response, @PathVariable Long brojpokretanja) throws Exception {
 
-        Resource resource = context.getResource("classpath:reports/repOdluka.jrxml");
+    @GetMapping(path = "/print")
+
+    public void getPrint(HttpServletResponse response) throws Exception {
+              Resource resource = context.getResource("classpath:reports/hitne.jrxml");
 
         InputStream inputStream = resource.getInputStream();
         JasperReport report = JasperCompileManager.compileReport(inputStream);
@@ -130,20 +135,29 @@ public class Pdf {
         Map<String, Object> params = new HashMap<>();
 
 
-        List<viewHitnePonudjaci> viwhitna = (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
+        List<Hitne> hitna = (List<Hitne>) hitneRepository.findAll();
 
         //Data source Set
-        JRDataSource dataSource = new JRBeanCollectionDataSource(viwhitna);
+        JRDataSource dataSource = new JRBeanCollectionDataSource(hitna);
         params.put("datasource", dataSource);
 
         //Make jasperPrint
         JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
 
-        PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
-        printRequestAttributeSet.add(new Copies(2));
+              //Media Type
+
+//        response.setContentType(MediaType.APPLICATION_PDF_VALUE);
+
+        //Export PDF Stream
+//        JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
+//
+//        PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
+//        printRequestAttributeSet.add(new Copies(2));
         jasperPrint.setPageHeight(100);
         jasperPrint.setPageWidth(80);
-        jasperPrint.setOrientation(jasperPrint.getOrientationValue().LANDSCAPE);
+        jasperPrint.setOrientation(OrientationEnum.LANDSCAPE);
         JasperPrintManager.printReport(jasperPrint, false);
     }
+
+
 }
