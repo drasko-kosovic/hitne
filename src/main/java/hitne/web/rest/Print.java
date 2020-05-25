@@ -151,7 +151,7 @@ public class Print {
         JRPrintServiceExporter exporter;
         PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
         printRequestAttributeSet.add(MediaSizeName.NA_LETTER);
-        printRequestAttributeSet.add(new Copies(1));
+        printRequestAttributeSet.add(new Copies(2));
 
         // these are deprecated
         exporter = new JRPrintServiceExporter();
@@ -273,7 +273,7 @@ public class Print {
         JRPrintServiceExporter exporter;
         PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
         printRequestAttributeSet.add(MediaSizeName.NA_LETTER);
-        printRequestAttributeSet.add(new Copies(1));
+        printRequestAttributeSet.add(new Copies(2));
 
         // these are deprecated
         exporter = new JRPrintServiceExporter();
