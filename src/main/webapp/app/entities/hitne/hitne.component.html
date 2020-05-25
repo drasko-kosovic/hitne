@@ -42,7 +42,7 @@
                     <th scope="col"  jhiSortBy="brojpokretanja"><span jhiTranslate="hitneApp.hitne.brojpokretanja">Brojpokretanja</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="datumpokretanja"><span jhiTranslate="hitneApp.hitne.datumpokretanja">Datumpokretanja</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="vrijednost"><span jhiTranslate="hitneApp.hitne.vrijednost">Vrijednost</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="naziv"><span jhiTranslate="hitneApp.hitne.naziv">Naziv</span> <fa-icon icon="sort"></fa-icon></th>
+<!--                    <th scope="col"  jhiSortBy="naziv"><span jhiTranslate="hitneApp.hitne.naziv">Naziv</span> <fa-icon icon="sort"></fa-icon></th>-->
                     <th scope="col"  jhiSortBy="ponudjaci.ponudjac"><span jhiTranslate="hitneApp.hitne.ponudjaci">Ponudjaci</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
@@ -53,7 +53,7 @@
                     <td>{{ hitne.brojpokretanja }}</td>
                     <td>{{ hitne.datumpokretanja | date:'mediumDate' }}</td>
                     <td>{{ hitne.vrijednost }}</td>
-                    <td>{{ hitne.naziv }}</td>
+<!--                    <td>{{ hitne.naziv }}</td>-->
                     <td>
                         <div *ngIf="hitne.ponudjaci">
                             <a [routerLink]="['/ponudjaci', hitne.ponudjaci?.id, 'view']" >{{ hitne.ponudjaci?.ponudjac }}</a>

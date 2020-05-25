@@ -100,4 +100,27 @@ export class HitneService {
     };
     return this.http.get<any>('https://hitna.herokuapp.com/report/zahtjev/' + brojpokretanja, httpOptions);
   }
+
+  printServicePokretanje(brojpokretanja: number | undefined): any {
+    const httpOptions = {
+      responseType: 'arraybuffer' as 'json'
+      // 'responseType'  : 'blob' as 'json'        //This also worked
+    };
+    return this.http.get<any>('https://hitna.herokuapp.com/report/print/pokretanje/' + brojpokretanja, httpOptions);
+  }
+
+  printServiceOdluka(brojpokretanja: number | undefined): any {
+    const httpOptions = {
+      responseType: 'arraybuffer' as 'json'
+      // 'responseType'  : 'blob' as 'json'        //This also worked
+    };
+    return this.http.get<any>('https://hitna.herokuapp.com/report/print/odluka/' + brojpokretanja, httpOptions);
+  }
+  printServiceZahtjev(brojpokretanja: number | undefined): any {
+    const httpOptions = {
+      responseType: 'arraybuffer' as 'json'
+      // 'responseType'  : 'blob' as 'json'        //This also worked
+    };
+    return this.http.get<any>('https://hitna.herokuapp.com/report/print/zahtjev/' + brojpokretanja, httpOptions);
+  }
 }

@@ -107,7 +107,7 @@ export class HitneUpdateComponent implements OnInit {
   }
 
   printReportZahtjev(): any {
-    this.hitneService.printReportServiceZahtjev(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
+    this.hitneService.printServiceZahtjev(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
       const file = new Blob([response], { type: 'application/pdf' });
       const fileURL = URL.createObjectURL(file);
       window.open(fileURL);
@@ -116,7 +116,7 @@ export class HitneUpdateComponent implements OnInit {
   }
 
   printReportPokretanje(): any {
-    this.hitneService.printReportServicePokretanje(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
+    this.hitneService.printServicePokretanje(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
       const file = new Blob([response], { type: 'application/pdf' });
       const fileURL = URL.createObjectURL(file);
       window.open(fileURL);
@@ -125,12 +125,18 @@ export class HitneUpdateComponent implements OnInit {
   }
 
   printReportOdluka(): any {
-    this.hitneService.printReportServiceOdluka(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
+    this.hitneService.printServiceOdluka(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
       const file = new Blob([response], { type: 'application/pdf' });
       const fileURL = URL.createObjectURL(file);
       window.open(fileURL);
       this.dodaj = true;
     });
+  }
+
+  printReportSve(): any {
+    this.printReportOdluka();
+    this.printReportPokretanje();
+    this.printReportZahtjev();
   }
 
   refresh(): void {
