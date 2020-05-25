@@ -124,40 +124,5 @@ public class Pdf {
 
 
 
-    @GetMapping(path = "/print")
-
-    public void getPrint(HttpServletResponse response) throws Exception {
-              Resource resource = context.getResource("classpath:reports/hitne.jrxml");
-
-        InputStream inputStream = resource.getInputStream();
-        JasperReport report = JasperCompileManager.compileReport(inputStream);
-
-        Map<String, Object> params = new HashMap<>();
-
-
-        List<Hitne> hitna = (List<Hitne>) hitneRepository.findAll();
-
-        //Data source Set
-        JRDataSource dataSource = new JRBeanCollectionDataSource(hitna);
-        params.put("datasource", dataSource);
-
-        //Make jasperPrint
-        JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
-
-              //Media Type
-
-//        response.setContentType(MediaType.APPLICATION_PDF_VALUE);
-
-        //Export PDF Stream
-//        JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
-//
-//        PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
-//        printRequestAttributeSet.add(new Copies(2));
-        jasperPrint.setPageHeight(100);
-        jasperPrint.setPageWidth(80);
-        jasperPrint.setOrientation(OrientationEnum.LANDSCAPE);
-        JasperPrintManager.printReport(jasperPrint, false);
-    }
-
 
 }
