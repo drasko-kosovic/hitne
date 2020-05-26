@@ -15,7 +15,7 @@ type EntityArrayResponseType = HttpResponse<IHitne[]>;
 @Injectable({ providedIn: 'root' })
 export class HitneService {
   public resourceUrl = SERVER_API_URL + 'api/hitnes';
-  public resourceUrlReportHeroku = 'http://localhost:8080/';
+  public resourceUrlReportHeroku = 'https://hitna.herokuapp.com/';
   public resourceUrlReportLocal = 'http://localhost:8080/';
 
   constructor(protected http: HttpClient) {}
@@ -85,7 +85,7 @@ export class HitneService {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/pokretanje/' + brojpokretanja, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/pokretanje/' + brojpokretanja, httpOptions);
   }
 
   printReportServiceOdluka(brojpokretanja: number | undefined): any {
@@ -93,14 +93,14 @@ export class HitneService {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/odluka/' + brojpokretanja, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/odluka/' + brojpokretanja, httpOptions);
   }
   printReportServiceZahtjev(brojpokretanja: number | undefined): any {
     const httpOptions = {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/zahtjev/' + brojpokretanja, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/zahtjev/' + brojpokretanja, httpOptions);
   }
 
   printServicePokretanje(brojpokretanja: number | undefined): any {
@@ -108,7 +108,7 @@ export class HitneService {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/print/pokretanje/' + brojpokretanja, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/print/pokretanje/' + brojpokretanja, httpOptions);
   }
 
   printServiceOdluka(brojpokretanja: number | undefined): any {
@@ -116,13 +116,13 @@ export class HitneService {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/print/odluka/' + brojpokretanja, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/print/odluka/' + brojpokretanja, httpOptions);
   }
   printServiceZahtjev(brojpokretanja: number | undefined): any {
     const httpOptions = {
       responseType: 'arraybuffer' as 'json'
       // 'responseType'  : 'blob' as 'json'        //This also worked
     };
-    return this.http.get<any>('http://localhost:8080/report/print/zahtjev/' + brojpokretanja, httpOptions);
+    return this.http.get<any>('https://hitna.herokuapp.com/report/print/zahtjev/' + brojpokretanja, httpOptions);
   }
 }
