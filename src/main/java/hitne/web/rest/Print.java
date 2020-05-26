@@ -106,6 +106,130 @@ public class Print {
 
     }
 
+    @GetMapping(path = "/print/pokretanje/{brojpokretanja}")
+    @ResponseBody
+    public void getPrintPokretanje(HttpServletResponse response, @PathVariable Long brojpokretanja) throws Exception {
+
+        Resource resource = context.getResource("classpath:reports/repPokretanje.jrxml");
+
+        InputStream inputStream = resource.getInputStream();
+        JasperReport report = JasperCompileManager.compileReport(inputStream);
+
+        Map<String, Object> params = new HashMap<>();
+
+
+        List<viewHitnePonudjaci> viwhitna= (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
+
+        //Data source Set
+        JRDataSource dataSource = new JRBeanCollectionDataSource(viwhitna);
+        params.put("datasource", dataSource);
+
+
+        //Make jasperPrint
+        JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
+
+//              Media Type
+        PrinterJob printerJob = PrinterJob.getPrinterJob();
+
+        PageFormat pageFormat = PrinterJob.getPrinterJob().defaultPage();
+        printerJob.defaultPage(pageFormat);
+
+        int selectedService = 0;
+
+        String printerNameShort="HP LaserJet Pro M404-M405";
+        AttributeSet attributeSet = new HashPrintServiceAttributeSet(new PrinterName(printerNameShort, null));
+
+        PrintService[] printService = PrintServiceLookup.lookupPrintServices(null, attributeSet);
+
+        try {
+            printerJob.setPrintService(printService[selectedService]);
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+        JRPrintServiceExporter exporter;
+        PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
+        printRequestAttributeSet.add(MediaSizeName.NA_LETTER);
+        printRequestAttributeSet.add(new Copies(1));
+
+        // these are deprecated
+        exporter = new JRPrintServiceExporter();
+        exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
+        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE, printService[selectedService]);
+        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET, printService[selectedService].getAttributes());
+        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_REQUEST_ATTRIBUTE_SET, printRequestAttributeSet);
+        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
+        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, Boolean.FALSE);
+        exporter.exportReport();
+
+    }
+
+
+
+    @GetMapping(path = "/print/zahtjev/{brojpokretanja}")
+    @ResponseBody
+    public void getPrintZahtjev(HttpServletResponse response, @PathVariable Long brojpokretanja) throws Exception {
+
+        Resource resource = context.getResource("classpath:reports/repZahtjev.jrxml");
+
+        InputStream inputStream = resource.getInputStream();
+        JasperReport report = JasperCompileManager.compileReport(inputStream);
+
+        Map<String, Object> params = new HashMap<>();
+
+
+        List<viewHitnePonudjaci> viwhitna= (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
+
+        //Data source Set
+        JRDataSource dataSource = new JRBeanCollectionDataSource(viwhitna);
+        params.put("datasource", dataSource);
+
+
+        //Make jasperPrint
+        JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
+
+//              Media Type
+        PrinterJob printerJob = PrinterJob.getPrinterJob();
+
+        PageFormat pageFormat = PrinterJob.getPrinterJob().defaultPage();
+        printerJob.defaultPage(pageFormat);
+
+        int selectedService = 0;
+
+        String printerNameShort="HP LaserJet Pro M404-M405";
+        AttributeSet attributeSet = new HashPrintServiceAttributeSet(new PrinterName(printerNameShort, null));
+
+        PrintService[] printService = PrintServiceLookup.lookupPrintServices(null, attributeSet);
+
+        try {
+            printerJob.setPrintService(printService[selectedService]);
+
+        } catch (Exception e) {
+
+            System.out.println(e);
+        }
+        JRPrintServiceExporter exporter;
+        PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
+        printRequestAttributeSet.add(MediaSizeName.NA_LETTER);
+        printRequestAttributeSet.add(new Copies(2));
+
+        // these are deprecated
+        exporter = new JRPrintServiceExporter();
+        exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
+        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE, printService[selectedService]);
+        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET, printService[selectedService].getAttributes());
+        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_REQUEST_ATTRIBUTE_SET, printRequestAttributeSet);
+        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
+        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, Boolean.FALSE);
+        exporter.exportReport();
+
+    }
+
+
+
+
+
     @GetMapping(path = "/print/odluka/{brojpokretanja}")
     @ResponseBody
     public void getPrintOdluka(HttpServletResponse response, @PathVariable Long brojpokretanja) throws Exception {
@@ -165,126 +289,5 @@ public class Print {
 
     }
 
-
-    @GetMapping(path = "/print/zahtjev/{brojpokretanja}")
-    @ResponseBody
-    public void getPrintZahtjev(HttpServletResponse response, @PathVariable Long brojpokretanja) throws Exception {
-
-        Resource resource = context.getResource("classpath:reports/repZahtjev.jrxml");
-
-        InputStream inputStream = resource.getInputStream();
-        JasperReport report = JasperCompileManager.compileReport(inputStream);
-
-        Map<String, Object> params = new HashMap<>();
-
-
-        List<viewHitnePonudjaci> viwhitna= (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
-
-        //Data source Set
-        JRDataSource dataSource = new JRBeanCollectionDataSource(viwhitna);
-        params.put("datasource", dataSource);
-
-
-        //Make jasperPrint
-        JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
-
-//              Media Type
-        PrinterJob printerJob = PrinterJob.getPrinterJob();
-
-        PageFormat pageFormat = PrinterJob.getPrinterJob().defaultPage();
-        printerJob.defaultPage(pageFormat);
-
-        int selectedService = 0;
-
-        String printerNameShort="HP LaserJet Pro M404-M405";
-        AttributeSet attributeSet = new HashPrintServiceAttributeSet(new PrinterName(printerNameShort, null));
-
-        PrintService[] printService = PrintServiceLookup.lookupPrintServices(null, attributeSet);
-
-        try {
-            printerJob.setPrintService(printService[selectedService]);
-
-        } catch (Exception e) {
-
-            System.out.println(e);
-        }
-        JRPrintServiceExporter exporter;
-        PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
-        printRequestAttributeSet.add(MediaSizeName.NA_LETTER);
-        printRequestAttributeSet.add(new Copies(1));
-
-        // these are deprecated
-        exporter = new JRPrintServiceExporter();
-        exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
-        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE, printService[selectedService]);
-        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET, printService[selectedService].getAttributes());
-        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_REQUEST_ATTRIBUTE_SET, printRequestAttributeSet);
-        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
-        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, Boolean.FALSE);
-        exporter.exportReport();
-
-    }
-
-
-
-
-    @GetMapping(path = "/print/pokretanje/{brojpokretanja}")
-    @ResponseBody
-    public void getPrintPokretanje(HttpServletResponse response, @PathVariable Long brojpokretanja) throws Exception {
-
-        Resource resource = context.getResource("classpath:reports/repPokretanje.jrxml");
-
-        InputStream inputStream = resource.getInputStream();
-        JasperReport report = JasperCompileManager.compileReport(inputStream);
-
-        Map<String, Object> params = new HashMap<>();
-
-
-        List<viewHitnePonudjaci> viwhitna= (List<viewHitnePonudjaci>) viewHitnePonudjaciRepository.findByBrojpokretanja(brojpokretanja);
-
-        //Data source Set
-        JRDataSource dataSource = new JRBeanCollectionDataSource(viwhitna);
-        params.put("datasource", dataSource);
-
-
-        //Make jasperPrint
-        JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
-
-//              Media Type
-        PrinterJob printerJob = PrinterJob.getPrinterJob();
-
-        PageFormat pageFormat = PrinterJob.getPrinterJob().defaultPage();
-        printerJob.defaultPage(pageFormat);
-
-        int selectedService = 0;
-
-        String printerNameShort="HP LaserJet Pro M404-M405";
-        AttributeSet attributeSet = new HashPrintServiceAttributeSet(new PrinterName(printerNameShort, null));
-
-        PrintService[] printService = PrintServiceLookup.lookupPrintServices(null, attributeSet);
-
-        try {
-            printerJob.setPrintService(printService[selectedService]);
-
-        } catch (Exception e) {
-
-            System.out.println(e);
-        }
-        JRPrintServiceExporter exporter;
-        PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
-        printRequestAttributeSet.add(MediaSizeName.NA_LETTER);
-        printRequestAttributeSet.add(new Copies(2));
-
-        // these are deprecated
-        exporter = new JRPrintServiceExporter();
-        exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
-        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE, printService[selectedService]);
-        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET, printService[selectedService].getAttributes());
-        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_REQUEST_ATTRIBUTE_SET, printRequestAttributeSet);
-        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
-        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, Boolean.FALSE);
-        exporter.exportReport();
-
-    }
 
 }
