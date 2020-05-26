@@ -105,38 +105,36 @@ export class HitneUpdateComponent implements OnInit {
   trackById(index: number, item: IPonudjaci): any {
     return item.id;
   }
-
-  printReportZahtjev(): any {
-    this.hitneService.printServiceZahtjev(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
-      const file = new Blob([response], { type: 'application/pdf' });
-      const fileURL = URL.createObjectURL(file);
-      window.open(fileURL);
+  printReportPokretanje(): any {
+    this.hitneService.printServicePokretanje(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
+      // const file = new Blob([response], { type: 'application/pdf' });
+      // const fileURL = URL.createObjectURL(file);
+      // window.open(fileURL);
       this.dodaj = true;
     });
   }
-
-  printReportPokretanje(): any {
-    this.hitneService.printServicePokretanje(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
-      const file = new Blob([response], { type: 'application/pdf' });
-      const fileURL = URL.createObjectURL(file);
-      window.open(fileURL);
+  printReportZahtjev(): any {
+    this.hitneService.printServiceZahtjev(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
+      // const file = new Blob([response], { type: 'application/pdf' });
+      // const fileURL = URL.createObjectURL(file);
+      // window.open(fileURL);
       this.dodaj = true;
     });
   }
 
   printReportOdluka(): any {
     this.hitneService.printServiceOdluka(this.editForm.get(['brojpokretanja'])!.value).subscribe((response: BlobPart) => {
-      const file = new Blob([response], { type: 'application/pdf' });
-      const fileURL = URL.createObjectURL(file);
-      window.open(fileURL);
+      // const file = new Blob([response], { type: 'application/pdf' });
+      // const fileURL = URL.createObjectURL(file);
+      // window.open(fileURL);
       this.dodaj = true;
     });
   }
 
   printReportSve(): any {
-    this.printReportOdluka();
     this.printReportPokretanje();
     this.printReportZahtjev();
+    this.printReportOdluka();
   }
 
   refresh(): void {

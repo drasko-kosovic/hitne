@@ -90,7 +90,7 @@
                     </small>
                 </div>
             </div>
-            <div>
+<!--            <div>-->
 <!--                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">-->
 <!--                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>-->
 <!--                </button>-->
@@ -108,7 +108,7 @@
 <!--                    <fa-icon icon="plus"></fa-icon><span >Dodaj</span>-->
 <!--                </button>-->
 
-            </div>
+<!--            </div>-->
 <!--            <div class="btn-group">-->
 <!--                <button type="button" class="btn btn-primary"(click)="printReportPokretanje()">Pokretanje</button>-->
 <!--                <button type="button" class="btn btn-primary"(click)="printReportZahtjev()">Zahtjev</button>-->
@@ -116,7 +116,8 @@
 <!--            </div>-->
 
             <div class="btn-group">
-                <button type="button" class="btn btn-danger"(click)="printReportSve()">Stampaj sve</button>
+                <button type="button" class="btn btn-danger"(click)="printReportSve()">
+                    <fa-icon [icon]="'print'"></fa-icon><span jhiTranslate="entity.action.print">Print</span></button>
             </div>
             <div class="btn-group">
                 <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-success">
@@ -125,7 +126,8 @@
                 <button type="button" id="cancel-save" class="btn btn-warning" (click)="previousState()">
                     <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-                <button type="button" [disabled]="dodaj==false" class="btn btn-primary" (click)="refresh()">Dodaj</button>
+                <button type="button" [disabled]="dodaj==false" class="btn btn-primary" (click)="refresh()">
+                        <fa-icon icon="plus"></fa-icon><span jhiTranslate="entity.action.add">Add</span></button>
             </div>
         </form>
     </div>
