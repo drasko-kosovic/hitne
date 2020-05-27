@@ -136,7 +136,8 @@ public class Print {
 
         int selectedService = 0;
 
-        String printerNameShort="HP LaserJet Pro M404-M405";
+        PrintService service    = PrintServiceLookup.lookupDefaultPrintService();
+        String printerNameShort= service.getName();
         AttributeSet attributeSet = new HashPrintServiceAttributeSet(new PrinterName(printerNameShort, null));
 
         PrintService[] printService = PrintServiceLookup.lookupPrintServices(null, attributeSet);
@@ -196,8 +197,8 @@ public class Print {
         printerJob.defaultPage(pageFormat);
 
         int selectedService = 0;
-
-        String printerNameShort="HP LaserJet Pro M404-M405";
+        PrintService service    = PrintServiceLookup.lookupDefaultPrintService();
+        String printerNameShort= service.getName();
         AttributeSet attributeSet = new HashPrintServiceAttributeSet(new PrinterName(printerNameShort, null));
 
         PrintService[] printService = PrintServiceLookup.lookupPrintServices(null, attributeSet);
@@ -259,8 +260,8 @@ public class Print {
         printerJob.defaultPage(pageFormat);
 
         int selectedService = 0;
-
-        String printerNameShort="HP LaserJet Pro M404-M405";
+        PrintService service    = PrintServiceLookup.lookupDefaultPrintService();
+        String printerNameShort= service.getName();
         AttributeSet attributeSet = new HashPrintServiceAttributeSet(new PrinterName(printerNameShort, null));
 
         PrintService[] printService = PrintServiceLookup.lookupPrintServices(null, attributeSet);
