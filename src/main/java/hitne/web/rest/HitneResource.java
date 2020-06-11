@@ -1,6 +1,7 @@
 package hitne.web.rest;
 
 import hitne.domain.Hitne;
+import hitne.repository.HitnaPonudjaciRepository;
 import hitne.service.HitneService;
 import hitne.web.rest.errors.BadRequestAlertException;
 import hitne.service.dto.HitneCriteria;
@@ -11,6 +12,7 @@ import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -39,6 +41,8 @@ public class HitneResource {
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
+    @Autowired
+    HitnaPonudjaciRepository hitnaPonudjaciRepository;
 
     private final HitneService hitneService;
 
@@ -102,6 +106,14 @@ public class HitneResource {
         Page<Hitne> page = hitneQueryService.findByCriteria(criteria, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    @GetMapping("/hitne")
+    public List<Hitne> getAllHitnes() {
+
+      return  hitnaPonudjaciRepository.findAll();
+//        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+//        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**
