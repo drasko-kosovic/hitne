@@ -13,8 +13,8 @@ public interface HitnaPonudjaciRepository extends JpaRepository<Hitne, Long>, Jp
     @Query(value="SELECT \n" +
         "  hitne.id, \n" +
         "  hitne.brojpokretanja, \n" +
-//        "  hitne.brojpokretanja, \n" +
-        "  hitne.brojpokretanja +2, \n" +
+        "  hitne.ponudjaci_id, \n" +
+
         "  hitne.datumpokretanja, \n" +
         "  add_business_day(hitne.datumpokretanja, 2) AS datumodluke, \n" +
         "  hitne.vrijednost, \n" +
