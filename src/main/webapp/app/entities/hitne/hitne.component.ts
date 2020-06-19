@@ -114,7 +114,7 @@ export class HitneComponent implements OnInit, OnDestroy {
     const pageToLoad: number = page ? page : this.page;
     this.hitneService
       .query({
-        'brojpokretanja.equals': this.brojPokretanja,
+        'brojpokretanja.in': this.brojPokretanja,
 
         page: pageToLoad - 1,
         size: this.itemsPerPage,
