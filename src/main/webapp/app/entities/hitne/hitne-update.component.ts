@@ -13,7 +13,8 @@ import { JhiAlertService } from 'ng-jhipster';
 
 @Component({
   selector: 'jhi-hitne-update',
-  templateUrl: './hitne-update.component.html'
+  templateUrl: './hitne-update.component.html',
+  styleUrls: ['./hitne-update.component.scss']
 })
 export class HitneUpdateComponent implements OnInit {
   isSaving = false;

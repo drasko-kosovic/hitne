@@ -19,7 +19,7 @@ export class PonudjaciUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     ponudjac: [null, [Validators.required]],
-    // ponudjac: [null, [Validators.required],[ Validacija.cannotContainSpace]],
+
     kontakt: [],
     adresa: [],
     grad: [],
