@@ -10,3 +10,12 @@
   width: 50px;
   height: 600px;
 }
+.card-body {
+  width: 600px;
+  height: 600px;
+}
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
